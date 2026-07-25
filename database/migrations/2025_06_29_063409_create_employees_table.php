@@ -17,13 +17,13 @@ class CreateEmployeesTable extends Migration
             $table->bigIncrements('id');
               $table->string('emp_id');
             $table->string('emp_name');
-            $table->string('emp_faculty');
-            $table->string('emp_dep');
-            $table->string('emp_position');
-            $table->string('emp_position_code');
-            $table->string('emp_phone');
+            $table->string('emp_faculty')->nullable();
+            $table->string('emp_dep')->nullable();
+            $table->string('emp_position')->nullable();
+            $table->string('emp_position_code')->nullable();
+            $table->string('emp_phone')->nullable();
             
-            $table->string('status');
+            $table->string('status')->default('active');
     
             $table->timestamps();
         });

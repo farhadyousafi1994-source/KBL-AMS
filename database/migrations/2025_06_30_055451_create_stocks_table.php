@@ -8,23 +8,26 @@ class CreateStocksTable extends Migration
 {
     public function up()
     {
-        Schema::create('stocks', function (Blueprint $table){$table->bigIncrements('id');
+        Schema::create('stocks', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('employee_id')->nullable();
+            $table->date('import_date');
+            $table->string('item_name');
+            $table->string('account_pay')->nullable();
+            $table->string('item_dep')->nullable();
+            $table->string('item_detail')->nullable();
+            $table->string('item_quantity')->default('1');
+            $table->string('item_cost')->nullable();
+            $table->string('status')->default('available');
+            $table->string('file')->nullable();
+            $table->timestamps();
 
-            $table->unsignedBigInteger('employee_id');$table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
-
-            $table->date('import_date');$table->string('item_name');
-            $table->string('account_pay');$table->string('item_dep');
-            $table->string('item_detail');$table->string('item_quantity');
-            $table->string('item_cost');$table->string('file')->nullable();
-
-            $table->timestamps(); // Corrected typo
+            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('set null');
         });
     }
 
     public function down()
     {
-
         Schema::dropIfExists('stocks');
     }
-
 }
