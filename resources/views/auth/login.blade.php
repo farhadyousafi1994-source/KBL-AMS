@@ -54,9 +54,9 @@
               <div class="clearfix"></div>
 
               <div class="separator">
-                <!-- <p class="change_link" style="color:blueviolet;">جدید در سایت؟
+                <p class="change_link" style="color:blueviolet;">جدید در سایت؟
                   <a href="register" class="to_register"style="color:blue;"> راجستر </a>
-                </p> -->
+                </p>
 
                 <div class="clearfix"></div>
                 <br />
