@@ -15,8 +15,13 @@
 // test routs end
 
 Route::get('/', function () {
-    return view('auth.login');
+    return redirect('/app');
 });
+
+Route::get('/app', function () {
+    return view('spa.app');
+})->name('spa.app');
+
 
 Route::get('usercontrol', function () {
     return view(' usercontrol ');
