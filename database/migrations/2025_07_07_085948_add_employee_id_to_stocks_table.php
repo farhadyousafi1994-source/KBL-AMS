@@ -11,19 +11,25 @@ class AddEmployeeIdToStocksTable extends Migration
      *
      * @return void
      */
-public function up()
-{
-    Schema::table('stocks', function (Blueprint $table)table->unsignedBigInteger('employee_id')->nullable()->after('id');
-        table->foreign('employee_id')->references('id')->on('employees')->onDelete('set null');
-    );
-}
+    public function up()
+    {
+        Schema::table('stocks', function (Blueprint $table) {
+            $table->foreign('employee_id')
+                ->references('id')
+                ->on('employees')
+                ->onDelete('set null');
+        });
+    }
 
-public function down()
-{
-
-    Schema::table('stocks', function (Blueprint $table) {
-        table->dropForeign(['employee_id']);table->dropColumn('employee_id');
-    });
-}
-
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('stocks', function (Blueprint $table) {
+            $table->dropForeign(['employee_id']);
+        });
+    }
 }
