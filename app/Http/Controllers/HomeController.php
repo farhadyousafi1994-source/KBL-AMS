@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\addinfo;
-use App\employee;
+use App\Employee;
 use App\User;
 
 use App\stock;
@@ -28,7 +28,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-$countemploy=employee::count('emp_id');
+        $dashboard = $this->dashboardMetrics();
+        return view('home', $dashboard);
+    }
+
+    public function report()
+    {
+        return view('report', $this->dashboardMetrics());
+    }
+
+    private function dashboardMetrics()
+    {
+$countemploy=Employee::count('emp_id');
 $item_cost=stock::sum('item_cost');
 $usercount=User::count('name');
 $item_quantity=stock::sum('item_quantity');
@@ -39,9 +50,7 @@ $item_quantity=stock::sum('item_quantity');
 //     ->get();
 
 // dd($data);
-        return view('home',compact('countemploy','item_cost','usercount','item_quantity'));
+        return compact('countemploy','item_cost','usercount','item_quantity');
     }
-
-   
-
 }
+
