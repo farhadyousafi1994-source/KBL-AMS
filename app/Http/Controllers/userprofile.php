@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\User;
 use DB;
-use App\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -18,7 +17,7 @@ class userprofile extends Controller
     {
               $info=User::all() ;
     //    dd($info);
-        return view('/auth.userprofile ',compact('info'));
+        return view('auth.userprofile', compact('info'));
     }
 
     /**
@@ -33,13 +32,13 @@ class userprofile extends Controller
     public function store(Request $request ) 
     {
       $this->validate($request,[
-        'name'=>'required' , 'email'=>'required']) ;
+        'name' => 'required', 'email' => 'required|email|unique:users,email', 'password' => 'required|min:6', 'type' => 'required|in:user,admin,super_admin']) ;
        $info =new User;
        $info->name=$request->input('name');  
        $info->email=$request->input('email');  
          $info->password = Hash::make($request->input('password'));
       
-       $info->type=$request->input('type');  
+       $info->type=trim($request->input('type'));  
      
       $info->save();
         
@@ -87,10 +86,10 @@ class userprofile extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-             'type'=>'required' ]) ;
+             'type' => 'required|in:user,admin,super_admin' ]) ;
             $info=User::find($id);
        
-             $info->type=$request->input('type'); 
+             $info->type=trim($request->input('type')); 
           
             
 

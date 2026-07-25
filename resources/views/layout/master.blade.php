@@ -48,6 +48,27 @@
     <!-- Custom Theme -->
     <link href="{{ asset('build/css/custom.min.css') }}" rel="stylesheet">
 
+    <style>
+        body.nav-md { background: #eef3f8; font-family: Tahoma, Arial, sans-serif; }
+        .left_col, .nav_title, .sidebar-footer { background: linear-gradient(180deg, #12355b 0%, #0b2038 100%) !important; }
+        .site_title { font-weight: 700; letter-spacing: .2px; }
+        .profile_info h2, .profile_info span { color: #fff; }
+        .nav.side-menu > li > a { border-radius: 12px; margin: 4px 10px; color: #dbeafe; transition: all .2s ease; }
+        .nav.side-menu > li > a:hover { background: rgba(255,255,255,.12) !important; transform: translateX(-2px); }
+        .top_nav .nav_menu { background: rgba(255,255,255,.92); border-bottom: 1px solid #d9e3ef; box-shadow: 0 8px 24px rgba(15, 23, 42, .06); }
+        .right_col { background: #eef3f8; min-height: 100vh !important; }
+        .x_panel { border: 0; border-radius: 22px; box-shadow: 0 14px 40px rgba(15, 23, 42, .08); }
+        .btn { border-radius: 10px; font-weight: 700; }
+        .form-control { border-radius: 10px; box-shadow: none; }
+        .table { background: #fff; border-radius: 16px; overflow: hidden; }
+        .erp-hero { background: linear-gradient(135deg, #12355b, #1f8f8b); color: #fff; border-radius: 24px; padding: 28px; margin-bottom: 22px; box-shadow: 0 16px 40px rgba(18,53,91,.22); }
+        .erp-card { background: #fff; border-radius: 20px; padding: 22px; min-height: 135px; box-shadow: 0 10px 24px rgba(15,23,42,.08); border: 1px solid #e6edf5; }
+        .erp-card .icon { width: 48px; height: 48px; border-radius: 14px; display: inline-flex; align-items: center; justify-content: center; color: #fff; background: linear-gradient(135deg, #2563eb, #14b8a6); }
+        .erp-card .value { font-size: 34px; font-weight: 800; color: #12355b; margin-top: 12px; }
+        .erp-actions .btn { margin: 4px; padding: 10px 16px; }
+        .dataTables_filter input { border: 1px solid #cbd5e1; border-radius: 10px; padding: 6px 10px; }
+    </style>
+
 </head>
 
 <body class="nav-md">
