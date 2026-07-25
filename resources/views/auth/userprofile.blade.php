@@ -144,10 +144,9 @@
    <label for="fullname">       تغیر صلاحیت    :</label>
                                 <div  >
                                     <select name="type" class="form-control">
-                                        <option> super_admin </option>
-                                        <option>  admin </option>
-
-                                        <option>  user </option>
+                                        <option value="super_admin">super_admin</option>
+                                        <option value="admin">admin</option>
+                                        <option value="user">user</option>
                                       
                                     </select>
                                 </div>
@@ -234,10 +233,9 @@
    <label for="fullname">       تعین صلاحیت    :</label>
                                 <div  >
                                     <select name="type" class="form-control">
-                                        <option> super_admin </option>
-                                        <option>  admin </option>
-
-                                        <option>  user </option>
+                                        <option value="super_admin">super_admin</option>
+                                        <option value="admin">admin</option>
+                                        <option value="user">user</option>
                                       
                                     </select>
                                 </div>
