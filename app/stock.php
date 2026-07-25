@@ -14,7 +14,7 @@ public function employee()
 }
      protected $table = 'stocks';
     protected $fillable = [
-        'item_name', 'item_quantity','item_detail','item_cost','item_dep'
+        'employee_id', 'account_pay', 'import_date', 'item_name', 'item_quantity','item_detail','item_cost','item_dep', 'status', 'file'
     ];
 
 
